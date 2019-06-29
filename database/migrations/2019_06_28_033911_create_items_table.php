@@ -16,11 +16,7 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->Increments('id');
             $table->integer('checklist_id')->foreign('checklist_id')->references('id')->on('checklists')
-<<<<<<< HEAD
-                                    ->onUpdate('cascade')->onDelete('cascade');
-=======
-            ->onUpdate('cascade')->onDelete('cascade');
->>>>>>> 92f044e76828b165c81fb7990d6d367d31cf7618
+                                        ->onUpdate('cascade')->onDelete('cascade');
             $table->string('description');
             $table->boolean('is_completed')->default(false);
             $table->date('completed_at')->nullable();
